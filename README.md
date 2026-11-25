@@ -1,167 +1,58 @@
-<div align="center">
+# Nova Trade (نوا ترید) v2 — Demo crypto trading & wallet app (Flutter)
 
-# ✨ Nova Trade
+تم مشکی-طلایی · این اپلیکیشن به عنوان دمو طراحی شده و هدف دیگری ندارد.
+Contact: keyvanVafaeeWeb@gmail.com · https://keivanVafaee.ir
 
-### A premium black-and-gold crypto trading & wallet app — built with Flutter
+یک اپ دموی کامل ترید و کیف پول ارز دیجیتال. تمام داده‌ها داخل کد هستند (بدون اینترنت و بدون API).
+Everything is local fake demo data. Only extra package: url_launcher (to open email / website).
 
-Live-style market data, a full trading wallet, a chart suite with indicators, an analyst marketplace, and a 3D "Market Pulse" orb — all running 100% offline on realistic simulated data.
+## اجرا / Run
+1. Flutter SDK (3.19+ / Dart 3) must be installed.
+2. In this folder:
+   ```
+   ./setup.sh        # (Windows: setup.bat)
+   ```
+   or manually:
+   ```
+   flutter create --platforms=android --project-name nova_trade --org app.novatrade .
+   flutter pub get
+   flutter run
+   ```
+3. APK: `flutter build apk --release`
 
-![Flutter](https://img.shields.io/badge/Flutter-3.19+-02569B?logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-3.0+-0175C2?logo=dart&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
-![Data](https://img.shields.io/badge/Backend-None%20(offline%20demo)-gold)
-![Status](https://img.shields.io/badge/Status-Demo-orange)
+> فایل‌های `android/` عمداً داخل پروژه نیست؛ دستور `flutter create` آن را مطابق نسخه Flutter شما می‌سازد
+> و به `lib/` دست نمی‌زند.
 
-[🌐 Website](https://keivanvafaee.ir/)
+## ورود
+هر ایمیل/رمز (حداقل ۴ کاراکتر) کار می‌کند؛ یا «ورود سریع به نسخه دمو» را بزنید.
 
-</div>
+## امکانات
+- قیمت زنده بازار (شبیه‌سازی هر ~۱ ثانیه) + نوار قیمت متحرک + نقشه حرارتی + ستاره‌دار کردن
+- شاخص ترس و طمع، تسلط بیت‌کوین
+- تحلیل کوین‌های پرطرفدار، تحلیل‌های رایگان، تحلیل‌های پولی (باز کردن با USDT)
+- سفارش تحلیل: انتخاب تحلیلگر/ارز/نوع/زمان تحویل، پیگیری مرحله‌ای و تحویل خودکار تحلیل (حدود ۱۵ ثانیه)
+- پروفایل تحلیلگران تاییدشده با تیک آبی، امتیاز، نرخ موفقیت، نظرات، دنبال کردن
+- نظرات کاربران (کل بازار یا هر کوین) + احساس جامعه + ثبت نظر
+- نمودارها: کندل استیک / خطی / مقایسه چند ارز، تایم‌فریم‌ها، لمس برای Crosshair، اندیکاتورها (RSI, MA, MACD)، دفتر سفارشات زنده
+- ورود / ثبت‌نام، ورود با اثر انگشت (شبیه‌سازی)
+- داشبورد کیف پول: موجودی، سود/زیان، نمودار توزیع دارایی، کوین‌ها، تاریخچه تراکنش
+- خرید/فروش واقعی روی دیتای دمو (موجودی تغییر می‌کند)، واریز (QR) و برداشت
+- ابزارها: تبدیل (Swap)، هشدار قیمت زنده، گردونه شانس روزانه + XP و سطح، دستیار هوشمند (چت دمو)، ماشین‌حساب ریسک
 
----
+## جدید در نسخه ۲
+- تم مشکی‌طلایی با ذرات طلایی متحرک، درخشش (shine)، حاشیه چرخان طلایی، کانفتی و لودینگ طلایی
+- بخش «تماس با ما» (ایمیل، وب‌سایت، فرم پیام، سوالات متداول و پیام دمو بودن اپ)
+- نظرات: لودینگ «در حال بروزرسانی»، اسکلتون، اسکرول بی‌نهایت، Pull-to-refresh و نظرات جدید زنده
+- امکانات جدید: اخبار، سیگنال لحظه‌ای و نهنگ‌ها، استیکینگ، خرید خودکار DCA، کپی ترید و رتبه‌بندی، آکادمی و آزمون، دعوت دوستان، دستاوردها، صفحه «همه امکانات»
+- ریسپانسیو: SafeArea برای همه صفحات، محدودیت مقیاس فونت، حداکثر عرض برای تبلت، شیت‌های قابل اسکرول
 
-> **⚠️ Demo application.** Nova Trade is a UI/UX and engineering showcase. All prices, balances, analysts, news, and transactions are **simulated, local data**. No real money, no real exchange, no real trading.
+## v2.1 — طراحی مجدد
+- رفع متن قرمز اولین صفحه: اسپلش بدون Scaffold بود و فلاتر استایل دیباگ (قرمز با زیرخط زرد) نشان می‌داد.
+- اسپلش جدید با موج‌های طلایی، لوگو و نوار پیشرفت؛ کارت دارایی به سبک کارت طلایی (چیپ، نقش‌های ظریف، درخشش)
+- کارت‌های شیشه‌ای با حاشیه گرادیانی طلایی، عنوان بخش‌ها با نشان الماسی، نوار پایین شناور که تب فعال را باز می‌کند
+- فونت وزیرمتن (Vazirmatn) از طریق google_fonts (بار اول نیاز به اینترنت؛ بدون اینترنت فونت پیش‌فرض)
 
-## 📖 About
-
-**Nova Trade (نوا ترید)** is a feature-rich crypto trading and wallet app that shows what a modern, polished exchange experience can feel like on mobile. It ships with a luxurious black-and-gold design system, smooth custom animations, a light/dark theme with a circular-reveal transition, and a large set of trading, analytics, and community features, all implemented in pure Flutter with almost no dependencies.
-
-The UI is bilingual-friendly and uses the **Vazirmatn** font for Persian/Farsi text.
-
-## 🚀 Features
-
-### 📈 Market
-- Simulated live prices updating about every second, with an animated price ticker
-- Market heat map, favorites (star) system
-- Fear & Greed Index and Bitcoin dominance
-- **Market Pulse** – an interactive 3D-style orb whose color, glow, orbits and particles react to market sentiment; tap for shockwaves, shakes in extreme fear
-
-### 📊 Charts
-- Candlestick, line, and multi-coin comparison charts
-- Multiple timeframes with touch **crosshair**
-- Indicators: **RSI, Moving Averages, MACD**
-- Live order book
-
-### 💼 Wallet
-- Portfolio dashboard with balance, PnL, and asset-allocation chart
-- Gold "credit card" style portfolio card
-- Buy / sell that actually updates balances on the demo data
-- Deposit (QR) and withdraw flows, full transaction history
-
-### 🧠 Analysis marketplace
-- Trending coin analyses, free and paid analyses (unlock with USDT)
-- Order a custom analysis: pick analyst, coin, type, and delivery time, then track progress step by step until it's auto-delivered
-- Verified analyst profiles (blue badge, rating, success rate, reviews, follow)
-
-### 💬 Community
-- Market-wide or per-coin comments, community sentiment, posting
-- Skeleton loaders, infinite scroll, pull-to-refresh, and live incoming comments
-
-### 🛠️ Tools & extras
-- Instant **Swap** converter
-- Live **price alerts**
-- Daily **lucky wheel** with XP and levels
-- **AI-style assistant** (demo chat)
-- **Risk calculator**
-- News, real-time signals & whale tracking
-- Staking, automated **DCA** buying
-- Copy trading and leaderboard
-- Academy with quizzes, referral program, achievements
-- Contact / FAQ section
-
-### 🎨 Design & UX
-- Black-and-gold theme with animated gold particles, shine effects, rotating gold borders, confetti, and gold loaders
-- Light & dark mode with a circular-wave transition
-- Glassmorphism cards with gradient borders, floating bottom navigation
-- Custom floating glass notification banners with haptic feedback and swipe-to-dismiss
-- Responsive: SafeArea everywhere, font-scale limits, tablet max-width, scrollable sheets
-- Biometric (fingerprint) login — simulated
-
-## 🧰 Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Language | **Dart 3** |
-| Framework | **Flutter 3.19+** (Material, `CustomPainter` for charts & effects) |
-| State management | Built-in Flutter state (`ChangeNotifier` / `setState`) — no external state library |
-| Fonts | [`google_fonts`](https://pub.dev/packages/google_fonts) (Vazirmatn) |
-| Links | [`url_launcher`](https://pub.dev/packages/url_launcher) |
-| Target platform | Android |
-
-## 🗄️ Database & Data
-
-**There is no database and no backend.** Nova Trade runs entirely offline:
-
-- All market data, analysts, news, comments, and transactions are generated from **in-code simulated datasets** (`lib/data.dart`).
-- Prices are driven by a local random-walk simulation (`lib/charts.dart`, `lib/state.dart`).
-- App state (balances, favorites, theme, etc.) lives **in memory** and resets when the app is restarted.
-- No API keys, no accounts, no network calls (the internet is only used to download the font on first launch, and to open external links).
-
-> 💡 Want to make it real? The data layer is isolated, so it can be swapped for a REST/WebSocket API (e.g. Binance, CoinGecko) and persistence added with `shared_preferences`, SQLite, or Isar.
-
-## 📁 Project Structure
-
-```
-lib/
-├── main.dart            # App entry, splash, routing
-├── theme.dart           # Black/gold + light/dark design tokens
-├── data.dart            # Simulated coins, analysts, news, etc.
-├── state.dart           # App state & live market simulation
-├── charts.dart          # Candlestick / line / indicator painters
-├── common.dart          # Shared widgets, toasts, effects
-├── portfolio_card.dart  # Gold portfolio card
-└── screens/
-    ├── auth.dart        ├── home.dart         ├── charts_page.dart
-    ├── wallet.dart      ├── analysis.dart     ├── community.dart
-    ├── tools.dart       ├── features.dart     ├── pulse.dart
-    ├── coin_detail.dart └── shell.dart
-```
-
-## ▶️ Getting Started
-
-**Requirements:** Flutter SDK 3.19+ (Dart 3) and an Android device/emulator.
-
-```bash
-git clone https://github.com/<your-username>/nova_trade.git
-cd nova_trade
-
-# Linux / macOS
-./setup.sh
-# Windows
-setup.bat
-```
-
-The setup script generates the Android platform files, adds the required `INTERNET` permission, fetches packages, and runs the app. Or do it manually:
-
-```bash
-flutter create --platforms=android --project-name nova_trade --org app.novatrade .
-flutter pub get
-flutter run
-```
-
-Build a release APK:
-
-```bash
-flutter build apk --release
-```
-
-### 🔑 Demo login
-Any email + password (min. 4 characters) works, or just tap **"Quick demo login"**.
-
-## 🗺️ Roadmap
-- [ ] Real market data via REST / WebSocket
-- [ ] Persistent storage (SQLite / Isar)
-- [ ] iOS & Web targets
-- [ ] Real authentication backend
-- [ ] Push notifications for price alerts
-
-## 📬 Contact
-
-Built by **Keivan Vafaee**
-🌐 [keivanvafaee.ir](https://keivanvafaee.ir/)
-
-## ⚠️ Disclaimer
-
-Nova Trade is a demonstration project. It does not provide financial advice and does not execute real trades or hold real funds.
-
-## 📄 License
-
-Add a license of your choice (e.g. MIT) before publishing.
+## v3 — تم روشن/تاریک، نوتیفیکیشن جدید، «نبض بازار»
+- **تم روشن و تاریک**: دکمه‌ی خورشید/ماه در هدر صفحه‌ی «بازار». تغییر تم با افکت موج دایره‌ای طلایی انجام می‌شود (از محل دکمه پخش می‌شود). همه‌ی رنگ‌ها از `C` در `lib/theme.dart` خوانده می‌شوند و در تم روشن کمی عمیق‌تر می‌شوند تا خوانایی حفظ شود. (انتخاب تم در حافظه می‌ماند، نه روی دیسک.)
+- **نوتیفیکیشن زیباتر**: به‌جای SnackBar، بنر شیشه‌ای شناور از بالای صفحه با آیکون درخشان، عنوان رنگی، نوار شمارش معکوس، لرزش سبک (haptic) و بستن با تپ یا کشیدن. تابع `toast()` سازگار مانده و پارامتر اختیاری `title` دارد؛ هشدار قیمت، DCA و تحلیل آماده با عنوان و آیکون مخصوص نمایش داده می‌شوند.
+- **قابلیت جدید «نبض بازار»** (`lib/screens/pulse.dart`): گوی سه‌بعدی زنده که رنگ، درخشش، مدارها و ذرات‌اش با شاخص ترس و طمع تغییر می‌کند؛ ضربه روی گوی موج شوک و پرتو می‌سازد، در ترس شدید می‌لرزد، و با اسلایدر/پریست‌ها حالت‌ها را مرحله‌ای عوض می‌کند. از «صفحه‌ی بازار ← نبض بازار» یا «همه امکانات» باز می‌شود.
